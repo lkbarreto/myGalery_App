@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
-import {  Text, View , StyleSheet, Image,Button, Alert, ImageBackground} from 'react-native';
-import AppLayout from './src/appLayout'
-import Login from './src/public/login'
-class MyGallery extends Component{
-  constructor(props){
-    super(props);
-    this.state={
-      user:"lkbarreto",
-      Pass:"",
-      logged:false
-    }
-  }
-  render(){
-    return(
-
-      
-          <Login/>
-
-    )
+import { Container, Header, Content, Card, CardItem, Text, Body } from 'native-base';
+export default class CardHeaderFooterExample extends Component {
+  render() {
+    return (
+      <Container>
+        <Header />
+        <Content>
+          <Card>
+            <CardItem header>
+              <Text>NativeBase</Text>
+            </CardItem>
+            <CardItem>
+              <Body>
+                <Text>
+                  //Your text here
+                </Text>
+              </Body>
+            </CardItem>
+            <CardItem footer>
+              <Text>GeekyAnts</Text>
+            </CardItem>
+         </Card>
+        </Content>
+      </Container>
+    );
   }
 }
- export default MyGallery
