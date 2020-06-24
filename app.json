@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "MyGallery",
+    "name": ":3",
     "slug": "MyGallery",
     "platforms": [
       "ios",
@@ -23,6 +23,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }
