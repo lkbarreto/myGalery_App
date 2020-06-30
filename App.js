@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image, Button, Alert, ImageBackground } from 'react-native';
-import AppLayout from './src/appLayout'
 import Login from './src/public/login'
+import Register from './src/public/register'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 class MyGallery extends Component {
   constructor(props) {
     super(props);
@@ -20,9 +22,9 @@ class MyGallery extends Component {
 
   render() {
     return (
-      <View>
+    
         <Login />
-      </View>
+     
     )
   }
 }
