@@ -13,17 +13,24 @@ class MyGallery extends Component {
       logged: false
     }
   }
+  
 
   isLogged=() =>{
     this.setState({
       logged: true
     })
   }
+  
 
   render() {
+    const Stack = createStackNavigator();
     return (
-    
-        <Login />
+            <NavigationContainer>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Login" options={{ headerShown: false }} component={Login} />
+          <Stack.Screen name="Register" options={{ title:'Registro' }}  component={Register} />
+        </Stack.Navigator>
+      </NavigationContainer>
      
     )
   }
