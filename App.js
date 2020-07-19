@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Card, CardItem, Text, Body } from 'native-base';
-export default class CardHeaderFooterExample extends Component {
+import Login from './src/public/login'
+import Register from './src/public/register'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+class MyGallery extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: "lkbarreto",
+      Pass: "",
+      logged: false
+    }
+  }
+  
+
+  isLogged=() =>{
+    this.setState({
+      logged: true
+    })
+  }
+  
+
   render() {
+    const Stack = createStackNavigator();
     return (
-      <Container>
-        <Header />
-        <Content>
-          <Card>
-            <CardItem header>
-              <Text>NativeBase</Text>
-            </CardItem>
-            <CardItem>
-              <Body>
-                <Text>
-                  //Your text here
-                </Text>
-              </Body>
-            </CardItem>
-            <CardItem footer>
-              <Text>GeekyAnts</Text>
-            </CardItem>
-         </Card>
-        </Content>
-      </Container>
-    );
+            <NavigationContainer>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Login" options={{ headerShown: false }} component={Login} />
+          <Stack.Screen name="Register" options={{ title:'Registro' }}  component={Register} />
+        </Stack.Navigator>
+      </NavigationContainer>
+     
+    )
   }
 }
+
+export default MyGallery 
