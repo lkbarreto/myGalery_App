@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
-import { Container, Header, Content, Card, CardItem, Text, Body } from 'native-base';
-export default class CardHeaderFooterExample extends Component {
-  render() {
-    return (
-      <Container>
-        <Header />
-        <Content>
-          <Card>
-            <CardItem header>
-              <Text>NativeBase</Text>
-            </CardItem>
-            <CardItem>
-              <Body>
-                <Text>
-                  //Your text here
-                </Text>
-              </Body>
-            </CardItem>
-            <CardItem footer>
-              <Text>GeekyAnts</Text>
-            </CardItem>
-         </Card>
-        </Content>
-      </Container>
-    );
-  }
+import React from 'react'
+import { Text, View, StyleSheet, Image, TextInput, ImageBackground } from 'react-native';
+import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
+
+
+function Home() {
+  return (
+    <Container>
+      <Header />
+      <Content>
+        <Label>Este es el home</Label>
+      </Content>
+    </Container>
+  )
 }
+
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column'
+  }
+})
+
+export default Home
