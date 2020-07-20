@@ -3,6 +3,11 @@ import { Text, View, StyleSheet, Image, TextInput, ImageBackground } from 'react
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import Home from '../private/home';
+
+
 
 
 
@@ -32,7 +37,7 @@ function Login({ navigation }) {
             />
           }
           iconRight
-          onPress={() => console.log("accion de entrar")}
+          onPress={() => navigation.navigate('Home')}
         />
         <Button
         containerStyle={styles.button}
@@ -50,6 +55,18 @@ function Login({ navigation }) {
 
 }
 
+const Drawer = createDrawerNavigator();
+
+export default function indexLogin() {
+  return (
+    
+      <Drawer.Navigator initialRouteName="Login">
+        <Drawer.Screen name="Login" component={Login} />
+        <Drawer.Screen name="Home" component={Home} />
+      </Drawer.Navigator>
+    
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -114,5 +131,3 @@ const styles = StyleSheet.create({
 
   }
 })
-
-export default Login
